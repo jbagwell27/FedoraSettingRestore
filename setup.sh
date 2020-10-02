@@ -53,3 +53,5 @@ cd ~
 # Copy Firefox preferences
 mv ~/.mozilla/firefox ~/.mozilla/firefox.bak
 cp -r PrivateFiles/firefox ~/.mozilla/firefox
+
+echo 'The following Gnome Extensions will need to be manually installed: Panel OSD'
