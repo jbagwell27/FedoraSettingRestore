@@ -2,9 +2,6 @@
 # I made this so that I could make a fresh install simpler for me. If you want it, you can have it.
 # Feel free to use, or modify this script and it's contents however you please.
 
-# Clone PrivateFiles repo
-git clone https://github.com/jbagwell27/PrivateFiles.git
-
 # Install Free RPM Fusion Repo
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 
@@ -39,19 +36,22 @@ sudo dnf install code vim geary VirtualBox gnome-tweaks
 # Install Gnome extensions
 
 # Dash to panel
-git clone https://github.com/home-sweet-gnome/dash-to-panel.git && cd dast-to-panel
+git clone https://github.com/home-sweet-gnome/dash-to-panel.git
+cd dast-to-panel
 make install
+cd ..
 
 # Todo.txt Shell Extension
 git clone https://gitlab.com/bartl/todo-txt-gnome-shell-extension.git
 mkdir ~/.local/share/gnome-shell/extensions
 cp -avr todo-txt-gnome-shell-extension/ ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com
-cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com && pip install -r requirements.txt
+cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com
+pip install -r requirements.txt
 make install
-cd ~
+cd ~/FedoraSettingRestore/
 
 # Copy Firefox preferences
 mv ~/.mozilla/firefox ~/.mozilla/firefox.bak
-cp -r PrivateFiles/firefox ~/.mozilla/firefox
+cp -r firefox ~/.mozilla/firefox
 
 echo 'The following Gnome Extensions will need to be manually installed: Panel OSD'
