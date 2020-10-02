@@ -1,0 +1,16 @@
+1600880132994	Sync.SyncScheduler	DEBUG	Next sync in 90000 ms. (why=schedule)
+1600880164801	Sync.RemoteTabs	INFO	Generating tab list with filter
+1600880164801	Sync.RemoteTabs	DEBUG	Processing client: {"id":"JkHXPQZWVwGe","type":"client","name":"Firefox Portable","clientType":"desktop","lastModified":1600880021870,"tabs":[]}
+1600880164801	Sync.RemoteTabs	DEBUG	Processing client: {"id":"f557aee916bd2cb91263ad4483fb3ae7","type":"client","name":"Firefox on OnePlus HD1907","clientType":"phone","lastModified":1600316094260,"tabs":[]}
+1600880164801	Sync.RemoteTabs	INFO	Final tab list has 2 clients with 2 tabs.
+1600880220862	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1600880222995	Sync.Service	DEBUG	User-Agent: Firefox/80.0.1 (Linux x86_64) FxSync/1.82.0.20200904083306.desktop
+1600880222995	Sync.Service	INFO	Starting sync at 2020-09-23 12:57:02 in browser session T2j2T3jk37pm
+1600880222995	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1600880222998	Sync.Status	INFO	Resetting Status.
+1600880222998	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1600880222998	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1600880228867	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/164549947/info/collections failed: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1600880228870	Sync.ErrorHandler	ERROR	Sync encountered an error: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1600880228872	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1600880228875	Sync.Service	DEBUG	Exception calling anonymous function: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available

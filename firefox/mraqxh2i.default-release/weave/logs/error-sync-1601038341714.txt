@@ -1,0 +1,38 @@
+1601037445698	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1601038045699	Sync.Service	DEBUG	User-Agent: Firefox/81.0 (Linux x86_64) FxSync/1.83.0.20200921095100.desktop
+1601038045699	Sync.Service	INFO	Starting sync at 2020-09-25 08:47:25 in browser session C6DT90llQije
+1601038045700	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1601038045702	Sync.Status	INFO	Resetting Status.
+1601038045702	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1601038045702	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1601038045702	FirefoxAccounts	DEBUG	getOAuthToken enter
+1601038045703	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1601038045703	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1601038045703	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1601038045837	Sync.Resource	DEBUG	GET success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/164549947/info/collections
+1601038045838	Sync.Service	DEBUG	Fetching server configuration: https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/164549947/info/configuration
+1601038336337	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1601038336337	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1601038336339	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1601038336340	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1601038341342	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile failed: 2147500036 - NS_ERROR_ABORT
+1601038341343	FirefoxAccounts	ERROR	Background refresh of profile failed: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 488\"  data: no]"}
+1601038341343	FirefoxAccounts	ERROR	Background refresh of profile failed: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 488\"  data: no]"}
+1601038341685	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1601038341685	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1601038341688	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1601038341689	Sync.Service	DEBUG	User-Agent: Firefox/81.0 (Linux x86_64) FxSync/1.83.0.20200921095100.desktop
+1601038341689	Sync.Service	INFO	Starting sync at 2020-09-25 08:52:21 in browser session C6DT90llQije
+1601038341689	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.js:62:5) JS Stack trace: LockException@util.js:62:5
+throwLockException@util.js:148:11
+WrappedLock@util.js:162:15
+_lockedSync@service.js:1375:6
+sync/<@service.js:1339:18
+WrappedCatch@util.js:133:27
+sync@service.js:1340:7
+1601038341689	Sync.Service	INFO	Cannot start sync: already syncing?
+1601038341708	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/164549947/info/configuration failed: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1601038341708	Sync.Service	WARN	Failed to fetch info/configuration: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1601038341708	Sync.ErrorHandler	ERROR	Sync encountered an error: Error: Aborting sync, remote setup failed(resource://services-sync/stages/enginesync.js:95:13) JS Stack trace: sync@enginesync.js:95:13
+1601038341709	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1601038341713	Sync.Service	DEBUG	Exception calling anonymous function: Error: Aborting sync, remote setup failed(resource://services-sync/stages/enginesync.js:95:13) JS Stack trace: sync@enginesync.js:95:13

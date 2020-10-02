@@ -1,0 +1,39 @@
+1601122637563	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1601127179349	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1601127179349	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1601127179352	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1601127179353	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1601127184863	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1601127184863	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1601127184866	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1601127184867	Sync.Service	DEBUG	User-Agent: Firefox/81.0 (Linux x86_64) FxSync/1.83.0.20200921095100.desktop
+1601127184867	Sync.Service	INFO	Starting sync at 2020-09-26 09:33:04 in browser session C6DT90llQije
+1601127184867	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1601127184869	Sync.Status	INFO	Resetting Status.
+1601127184869	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1601127184869	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1601127184869	FirefoxAccounts	DEBUG	getOAuthToken enter
+1601127184869	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1601127184869	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1601127184869	Sync.BrowserIDManager	INFO	Getting keys
+1601127184869	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1601127184870	Sync.BrowserIDManager	INFO	Getting an assertion from: https://token.services.mozilla.com/1.0/sync/1.5
+1601127184870	Sync.BrowserIDManager	DEBUG	Getting a token using OAuth
+1601127184870	FirefoxAccounts	DEBUG	getAccessToken enter
+1601127184870	FirefoxAccounts	DEBUG	getOAuthToken enter
+1601127184870	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1601127184870	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1601127184870	FirefoxAccounts	DEBUG	Using cached scopedKeys data for https://identity.mozilla.com/apps/oldsync
+1601127184870	Services.Common.TokenServerClient	DEBUG	Beginning OAuth token exchange: https://token.services.mozilla.com/1.0/sync/1.5
+1601127184871	Services.Common.RESTRequest	DEBUG	GET request to https://token.services.mozilla.com/1.0/sync/1.5
+1601127185524	Services.Common.RESTRequest	DEBUG	GET https://token.services.mozilla.com/1.0/sync/1.5 200
+1601127185524	Services.Common.TokenServerClient	DEBUG	Got token response: 200
+1601127185524	Services.Common.TokenServerClient	DEBUG	Successful token response
+1601127185524	Sync.Status	DEBUG	Status.login: success.login => success.login
+1601127185524	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1601127185527	Sync.BulkKeyBundle	INFO	BulkKeyBundle being created for undefined
+1601127185528	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile 304
+1601127185546	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/164549947/info/collections failed: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1601127185546	Sync.ErrorHandler	ERROR	Sync encountered an error: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1601127185547	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1601127185548	Sync.Service	DEBUG	Exception calling anonymous function: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
