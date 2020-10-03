@@ -17,7 +17,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # Enable Insync Repo
 sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
-sudo sh -c 'echo -e "[insync]\nname=insync repo\nbaseurl=http://yum.insync.io/fedora/$releasever/\ngpgcheck=1\ngpgkey=https://d2t3ff60b2tol4\ncloudfront.net/repomd.xml.key\nenabled=1\nmetadata_expire=120m" > /etc/yum.repos.d/insync.repo'
+sudo sh -c 'echo -e "[insync]\nname=insync repo\nbaseurl=http://yum.insync.io/fedora/\$releasever/\ngpgcheck=1\ngpgkey=https://d2t3ff60b2tol4cloudfront.net/repomd.xml.key\nenabled=1\nmetadata_expire=120m" > /etc/yum.repos.d/insync.repo'
 
 # Update newly installed repos
 sudo dnf update -y
@@ -33,7 +33,7 @@ sudo dnf install make redhat-rpm-config gnome-tweaks pkg-config git zip gnome-co
 
 
 # Install Flatpak Software
-flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3-y
+flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3 -y
 
 
 # Install Applications
@@ -57,7 +57,6 @@ mkdir ~/.local/share/gnome-shell/extensions/
 cd ~ && git clone https://github.com/home-sweet-gnome/dash-to-panel.git
 cd dash-to-panel
 make install
-gnome-extensions enable dash-to-dock@micxgx.gmail.com
 
 # Todo.txt Shell Extension
 cd ~ && git clone https://gitlab.com/bartl/todo-txt-gnome-shell-extension.git
@@ -65,26 +64,22 @@ cp -avr todo-txt-gnome-shell-extension/ ~/.local/share/gnome-shell/extensions/to
 cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
 pip install -r requirements.txt
 make install
-gnome-extensions enable todo.txt@bart.libert.gmail.com
 
 # Panel OSD
 cd ~ && git clone git://gitlab.com/jenslody/gnome-shell-extension-panel-osd.git
 cd ~/gnome-shell-extension-panel-osd/
 ./autogen.sh && make local-install
-gnome-extensions enable panel-osd@berend.de.schouwer.gmail.com
 
 # Lock Keys
 cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.git
 cp -r gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
-gnome-extensions enable lockkeys@vaina.lt
 
 # App Indicator
 cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
 cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
-gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
 
 # Copy Firefox preferences
 mv ~/.mozilla/firefox ~/.mozilla/firefox.bak
-cp -r firefox ~/.mozilla/firefox/
+cp -r ~/FedoraSettingRestore/firefox ~/.mozilla/firefox/
 
 echo 'Update complete. Please restart the machine to refresh GDM and enable snappak installs'
