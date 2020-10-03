@@ -39,4 +39,6 @@ Clone the repo, and run [setup.sh](https://github.com/jbagwell27/FedoraSettingRe
   - [Panel OSD](https://extensions.gnome.org/extension/708/panel-osd/)
   - [Todo.txt](https://extensions.gnome.org/extension/570/todotxt/)
 
+## What's next
+
 I will continue to update the script as I add new applications and configurations to my workflow.
