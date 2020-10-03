@@ -33,42 +33,58 @@ sudo dnf install make redhat-rpm-config gnome-tweaks pkg-config git zip gnome-co
 
 
 # Install Flatpak Software
-flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord -y
+flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3-y
 
 
 # Install Applications
-sudo dnf install code vim geary VirtualBox filezilla gparted gimp gcolor3 insync -y
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp insync wine snapd epiphany -y
 
 
 # Extra configurations
+
+# Add user to vboxusers group for virtualbox configuration
 sudo usermod -a -G vboxusers $USER
+# Switch to xorg from Wayland
 sudo cp /etc/gdm/custom.conf /etc/gdm/custom.conf.bak
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/' /etc/gdm/custom.conf
 sudo sed -i '/WaylandEnable=false/a DefaultSession=gnome-xorg.desktop' /etc/gdm/custom.conf
 
 
 # Install Gnome extensions
+mkdir ~/.local/share/gnome-shell/extensions/
 
 # Dash to panel
 cd ~ && git clone https://github.com/home-sweet-gnome/dash-to-panel.git
-cd dast-to-panel
+cd dash-to-panel
 make install
+gnome-extensions enable dash-to-dock@micxgx.gmail.com
 
 # Todo.txt Shell Extension
 cd ~ && git clone https://gitlab.com/bartl/todo-txt-gnome-shell-extension.git
-mkdir ~/.local/share/gnome-shell/extensions
-cp -avr todo-txt-gnome-shell-extension/ ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com
-cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com
+cp -avr todo-txt-gnome-shell-extension/ ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
+cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
 pip install -r requirements.txt
 make install
+gnome-extensions enable todo.txt@bart.libert.gmail.com
 
 # Panel OSD
 cd ~ && git clone git://gitlab.com/jenslody/gnome-shell-extension-panel-osd.git
-cd ~/gnome-shell-extension-panel-osd
+cd ~/gnome-shell-extension-panel-osd/
 ./autogen.sh && make local-install
+gnome-extensions enable panel-osd@berend.de.schouwer.gmail.com
+
+# Lock Keys
+cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.git
+cp gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
+gnome-extensions enable lockkeys@vaina.lt
+
+# App Indicator
+cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
+cp gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
 
 # Copy Firefox preferences
 mv ~/.mozilla/firefox ~/.mozilla/firefox.bak
-cp -r firefox ~/.mozilla/firefox
+cp -r firefox ~/.mozilla/firefox/
 
-echo 'The following Gnome Extensions will need to be manually installed: Panel OSD'
+echo 'Update complete. Please restart the machine to refresh GDM and enable snappak installs'
