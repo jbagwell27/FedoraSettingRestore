@@ -17,7 +17,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # Enable Insync Repo
 sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
-sudo sh -c 'echo -e "[insync]\nname=insync repo\nbaseurl=http://yum.insync.io/fedora/$releasever/\ngpgcheck=1\ngpgkey=https://d2t3ff60b2tol4\ncloudfront.net/repomd.xml.key\nenabled=1\nmetadata_expire=120m > /etc/yum.repos.d/insync.repo'
+sudo sh -c 'echo -e "[insync]\nname=insync repo\nbaseurl=http://yum.insync.io/fedora/$releasever/\ngpgcheck=1\ngpgkey=https://d2t3ff60b2tol4\ncloudfront.net/repomd.xml.key\nenabled=1\nmetadata_expire=120m" > /etc/yum.repos.d/insync.repo'
 
 # Update newly installed repos
 sudo dnf update -y
@@ -75,12 +75,12 @@ gnome-extensions enable panel-osd@berend.de.schouwer.gmail.com
 
 # Lock Keys
 cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.git
-cp gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
+cp -r gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
 gnome-extensions enable lockkeys@vaina.lt
 
 # App Indicator
 cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
-cp gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
 gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
 
 # Copy Firefox preferences
