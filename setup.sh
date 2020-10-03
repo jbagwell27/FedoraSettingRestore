@@ -15,11 +15,15 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 # Enable Flatpak repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# Enable Insync Repo
+sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
+sudo sh -c 'echo -e "[insync]\nname=insync repo\nbaseurl=http://yum.insync.io/fedora/$releasever/\ngpgcheck=1\ngpgkey=https://d2t3ff60b2tol4\ncloudfront.net/repomd.xml.key\nenabled=1\nmetadata_expire=120m > /etc/yum.repos.d/insync.repo'
+
 # Update newly installed repos
-sudo dnf update
+sudo dnf update -y
 
 # Install dependencies
-sudo dnf install make redhat-rpm-config -y
+sudo dnf install make redhat-rpm-config gnome-tweaks pkg-config git zip gnome-common autoconf automake gnome-tweak-tool gettext-devel -y
 
 # Update fstab
 # sudo mkdir /media/share
@@ -27,28 +31,41 @@ sudo dnf install make redhat-rpm-config -y
 # echo -e '192.168.1.4:/mnt/mainpool/share\t/media/share\tnfs\trw\t0t\0' | sudo tee -a /etc/fstab
 # echo -e '192.168.1.4:/mnt/mainpool/plex\t/media/plex\tnfs\trw\t0\t0' | sudo tee -a /etc/fstab
 
+
 # Install Flatpak Software
 flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord -y
 
+
 # Install Applications
-sudo dnf install code vim geary VirtualBox gnome-tweaks 
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp gcolor3 insync -y
+
+
+# Extra configurations
+sudo usermod -a -G vboxusers $USER
+sudo cp /etc/gdm/custom.conf /etc/gdm/custom.conf.bak
+sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/' /etc/gdm/custom.conf
+sudo sed -i '/WaylandEnable=false/a DefaultSession=gnome-xorg.desktop' /etc/gdm/custom.conf
+
 
 # Install Gnome extensions
 
 # Dash to panel
-git clone https://github.com/home-sweet-gnome/dash-to-panel.git
+cd ~ && git clone https://github.com/home-sweet-gnome/dash-to-panel.git
 cd dast-to-panel
 make install
-cd ..
 
 # Todo.txt Shell Extension
-git clone https://gitlab.com/bartl/todo-txt-gnome-shell-extension.git
+cd ~ && git clone https://gitlab.com/bartl/todo-txt-gnome-shell-extension.git
 mkdir ~/.local/share/gnome-shell/extensions
 cp -avr todo-txt-gnome-shell-extension/ ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com
 cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com
 pip install -r requirements.txt
 make install
-cd ~/FedoraSettingRestore/
+
+# Panel OSD
+cd ~ && git clone git://gitlab.com/jenslody/gnome-shell-extension-panel-osd.git
+cd ~/gnome-shell-extension-panel-osd
+./autogen.sh && make local-install
 
 # Copy Firefox preferences
 mv ~/.mozilla/firefox ~/.mozilla/firefox.bak
