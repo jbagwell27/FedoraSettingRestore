@@ -37,7 +37,7 @@ flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord org.tele
 
 
 # Install Applications
-sudo dnf install code vim geary VirtualBox filezilla gparted gimp insync wine snapd epiphany -y
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany -y
 
 
 # Extra configurations
@@ -75,11 +75,14 @@ cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.
 cp -r gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
 
 # App Indicator
-cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
-cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+# App Indicator not working properly when installing through git.
+# cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
+# cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
 
-# Copy Firefox preferences
-mv ~/.mozilla/firefox ~/.mozilla/firefox.bak
-cp -r ~/FedoraSettingRestore/firefox ~/.mozilla/firefox/
+# Clean up added repos
+rm -rf ~/dash-to-panel/
+rm -rf ~/gnome-shell-extension-appindicator/
+rm -rf ~/gnome-shell-extension-lockkeys/
+rm -rf ~/todo-txt-gnome-shell-extension/
 
 echo 'Update complete. Please restart the machine to refresh GDM and enable snappak installs'
