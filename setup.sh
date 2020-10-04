@@ -75,9 +75,13 @@ cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.
 cp -r gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
 
 # App Indicator
+# cd ~ && wget https://github.com/ubuntu/gnome-shell-extension-appindicator/archive/v34.zip
+# unzip -d ~/.local/share/gnome-shell/extensions/ v34.zip
+# mv ~/.local/share/gnome-shell/extensions/gnome-shell-extension-appindicator-34 ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+
 # App Indicator not working properly when installing through git.
-# cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
-# cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
+cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
 
 # Clean up added repos
 rm -rf ~/dash-to-panel/
@@ -85,4 +89,4 @@ rm -rf ~/gnome-shell-extension-appindicator/
 rm -rf ~/gnome-shell-extension-lockkeys/
 rm -rf ~/todo-txt-gnome-shell-extension/
 
-echo 'Update complete. Please restart the machine to refresh GDM and enable snappak installs'
+echo -e 'Update complete. Please restart the machine to refresh GDM and enable snappak installs.'
