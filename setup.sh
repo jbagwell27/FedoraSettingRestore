@@ -26,10 +26,10 @@ sudo dnf update -y
 sudo dnf install make redhat-rpm-config gnome-tweaks pkg-config git zip gnome-common autoconf automake gnome-tweak-tool gettext-devel -y
 
 # Update fstab
-# sudo mkdir /media/share
-# sudo mkdir /media/plex
-# echo -e '192.168.1.4:/mnt/mainpool/share\t/media/share\tnfs\trw\t0t\0' | sudo tee -a /etc/fstab
-# echo -e '192.168.1.4:/mnt/mainpool/plex\t/media/plex\tnfs\trw\t0\t0' | sudo tee -a /etc/fstab
+sudo mkdir /media/share
+sudo mkdir /media/plex
+echo -e '192.168.1.4:/mnt/mainpool/share\t/media/share\tnfs\tdefaults\t0t\0' | sudo tee -a /etc/fstab
+echo -e '192.168.1.4:/mnt/mainpool/plex\t/media/plex\tnfs\tdefaults\t0\t0' | sudo tee -a /etc/fstab
 
 
 # Install Flatpak Software
@@ -74,12 +74,7 @@ cd ~/gnome-shell-extension-panel-osd/
 cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.git
 cp -r gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
 
-# App Indicator
-# cd ~ && wget https://github.com/ubuntu/gnome-shell-extension-appindicator/archive/v34.zip
-# unzip -d ~/.local/share/gnome-shell/extensions/ v34.zip
-# mv ~/.local/share/gnome-shell/extensions/gnome-shell-extension-appindicator-34 ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
-
-# App Indicator not working properly when installing through git.
+# App Indicator, requires update and gnome shell restart
 cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
 cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
 
