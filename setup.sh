@@ -74,16 +74,7 @@ cd ~/gnome-shell-extension-panel-osd/
 cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.git
 cp -r gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
 
-<<<<<<< HEAD
-# App Indicator, requires update and gnome shell restart
-=======
 # App Indicator
-# cd ~ && wget https://github.com/ubuntu/gnome-shell-extension-appindicator/archive/v34.zip
-# unzip -d ~/.local/share/gnome-shell/extensions/ v34.zip
-# mv ~/.local/share/gnome-shell/extensions/gnome-shell-extension-appindicator-34 ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
-
-# App Indicator not working properly when installing through git.
->>>>>>> ed3a587b645665f254799174f760b78a43835a2e
 cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
 cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
 
