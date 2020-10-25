@@ -37,7 +37,7 @@ flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord org.tele
 
 
 # Install Applications
-sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany -y
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany exfat-utils -y
 
 
 # Extra configurations
