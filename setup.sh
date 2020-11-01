@@ -32,10 +32,10 @@ echo -e '192.168.1.4:/mnt/mainpool/share\t/media/share\tnfs\trw\t0\t0' | sudo te
 echo -e '192.168.1.4:/mnt/mainpool/plex\t/media/plex\tnfs\trw\t0\t0' | sudo tee -a /etc/fstab
 
 # Update Hosts
-echo -e '192.168.1.4\tfreenas.local' | sudo tee -a /etc/fstab
-echo -e '192.168.1.6\tplex.local' | sudo tee -a /etc/fstab
-echo -e '192.168.1.8\ttransmission.local' | sudo tee -a /etc/fstab
-echo -e '192.168.1.25\tpiarouter.local' | sudo tee -a /etc/fstab
+echo -e '192.168.1.4\tfreenas.local' | sudo tee -a /etc/hosts
+echo -e '192.168.1.6\tplex.local' | sudo tee -a /etc/hosts
+echo -e '192.168.1.8\ttransmission.local' | sudo tee -a /etc/hosts
+echo -e '192.168.1.25\tpiarouter.local' | sudo tee -a /etc/hosts
 
 
 # Install Flatpak Software
