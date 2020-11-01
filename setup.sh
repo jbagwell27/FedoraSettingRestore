@@ -39,11 +39,11 @@ echo -e '192.168.1.25\tpiarouter.local' | sudo tee -a /etc/fstab
 
 
 # Install Flatpak Software
-flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3 -y
+flatpak install flathub com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3 -y
 
 
 # Install Applications
-sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync exfat-utils -y
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync bpytop -y
 
 
 # Extra configurations
