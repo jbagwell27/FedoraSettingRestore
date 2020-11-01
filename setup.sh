@@ -31,13 +31,19 @@ sudo mkdir /media/plex
 echo -e '192.168.1.4:/mnt/mainpool/share\t/media/share\tnfs\tdefaults\t0\t0' | sudo tee -a /etc/fstab
 echo -e '192.168.1.4:/mnt/mainpool/plex\t/media/plex\tnfs\tdefaults\t0\t0' | sudo tee -a /etc/fstab
 
+# Update Hosts
+echo -e '192.168.1.4\tfreenas.local' | sudo tee -a /etc/fstab
+echo -e '192.168.1.6\tplex.local' | sudo tee -a /etc/fstab
+echo -e '192.168.1.8\ttransmission.local' | sudo tee -a /etc/fstab
+echo -e '192.168.1.25\tpiarouter.local' | sudo tee -a /etc/fstab
+
 
 # Install Flatpak Software
 flatpak install flathub de.manuel_kehl.go-for-it com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3 -y
 
 
 # Install Applications
-sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany exfat-utils -y
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync exfat-utils -y
 
 
 # Extra configurations
