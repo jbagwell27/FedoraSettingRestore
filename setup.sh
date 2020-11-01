@@ -28,8 +28,8 @@ sudo dnf install make redhat-rpm-config gnome-tweaks pkg-config git zip gnome-co
 # Update fstab
 sudo mkdir /media/share
 sudo mkdir /media/plex
-echo -e '192.168.1.4:/mnt/mainpool/share\t/media/share\tnfs\tdefaults\t0\t0' | sudo tee -a /etc/fstab
-echo -e '192.168.1.4:/mnt/mainpool/plex\t/media/plex\tnfs\tdefaults\t0\t0' | sudo tee -a /etc/fstab
+echo -e '192.168.1.4:/mnt/mainpool/share\t/media/share\tnfs\trw\t0\t0' | sudo tee -a /etc/fstab
+echo -e '192.168.1.4:/mnt/mainpool/plex\t/media/plex\tnfs\trw\t0\t0' | sudo tee -a /etc/fstab
 
 # Update Hosts
 echo -e '192.168.1.4\tfreenas.local' | sudo tee -a /etc/fstab
