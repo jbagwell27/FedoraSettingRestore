@@ -25,6 +25,13 @@ sudo dnf update -y
 # Install dependencies
 sudo dnf install make redhat-rpm-config gnome-tweaks pkg-config git zip gnome-common autoconf automake gnome-tweak-tool gettext-devel glib -y
 
+# Install Flatpak Software
+flatpak install flathub com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3 -y
+
+
+# Install Applications
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync bpytop gstreamer1-plugin-openh264 gstreamer1-libav -y
+
 # Update fstab
 sudo mkdir /media/share
 sudo mkdir /media/plex
@@ -36,15 +43,6 @@ echo -e '192.168.1.4\tfreenas.local' | sudo tee -a /etc/hosts
 echo -e '192.168.1.6\tplex.local' | sudo tee -a /etc/hosts
 echo -e '192.168.1.8\ttransmission.local' | sudo tee -a /etc/hosts
 echo -e '192.168.1.25\tpiarouter.local' | sudo tee -a /etc/hosts
-
-
-# Install Flatpak Software
-flatpak install flathub com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3 -y
-
-
-# Install Applications
-sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync bpytop -y
-
 
 # Extra configurations
 
