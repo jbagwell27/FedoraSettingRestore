@@ -62,17 +62,17 @@ cd ~ && git clone https://github.com/home-sweet-gnome/dash-to-panel.git
 cd dash-to-panel
 make install
 
-# Todo.txt Shell Extension
+# Todo.txt Extension
 cd ~ && git clone https://gitlab.com/bartl/todo-txt-gnome-shell-extension.git
 cp -avr todo-txt-gnome-shell-extension/ ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
 cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
 pip install -r requirements.txt
 make install
 
-# Panel OSD
-cd ~ && git clone git://gitlab.com/jenslody/gnome-shell-extension-panel-osd.git
-cd ~/gnome-shell-extension-panel-osd/
-./autogen.sh && make local-install
+# Notification Center
+cd ~ && git clone https://github.com/Selenium-H/Notification-Center.git
+cd Notification-Center
+bash INSTALL.sh
 
 # Lock Keys
 cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.git
@@ -84,8 +84,9 @@ cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/
 
 # Clean up added repos
 rm -rf ~/dash-to-panel/
-rm -rf ~/gnome-shell-extension-appindicator/
-rm -rf ~/gnome-shell-extension-lockkeys/
 rm -rf ~/todo-txt-gnome-shell-extension/
+rm -rf ~/Notification-Center/
+rm -rf ~/gnome-shell-extension-lockkeys/
+rm -rf ~/gnome-shell-extension-appindicator/
 
 echo -e 'Update complete. Please restart the machine to refresh GDM and enable snappak installs.'
