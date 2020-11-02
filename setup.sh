@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Author: Joshua Bagwell
 # I made this so that I could make a fresh install simpler for me. If you want it, you can have it.
 # Feel free to use, or modify this script and it's contents however you please.
@@ -28,9 +30,8 @@ sudo dnf install make redhat-rpm-config gnome-tweaks pkg-config git zip gnome-co
 # Install Flatpak Software
 flatpak install flathub com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3 -y
 
-
 # Install Applications
-sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync bpytop gstreamer1-plugin-openh264 gstreamer1-libav -y
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync bpytop gstreamer1-plugin-openh264 gstreamer1-libav gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly -y
 
 # Update fstab
 sudo mkdir /media/share
@@ -47,12 +48,11 @@ echo -e '192.168.1.25\tpiarouter.local' | sudo tee -a /etc/hosts
 # Extra configurations
 
 # Add user to vboxusers group for virtualbox configuration
-sudo usermod -a -G vboxusers $USER
+sudo usermod -a -G vboxusers "$USER"
 # Switch to xorg from Wayland
 sudo cp /etc/gdm/custom.conf /etc/gdm/custom.conf.bak
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/' /etc/gdm/custom.conf
 sudo sed -i '/WaylandEnable=false/a DefaultSession=gnome-xorg.desktop' /etc/gdm/custom.conf
-
 
 # Install Gnome extensions
 mkdir ~/.local/share/gnome-shell/extensions/
