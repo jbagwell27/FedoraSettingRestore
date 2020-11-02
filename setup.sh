@@ -57,36 +57,46 @@ sudo sed -i '/WaylandEnable=false/a DefaultSession=gnome-xorg.desktop' /etc/gdm/
 # Install Gnome extensions
 mkdir ~/.local/share/gnome-shell/extensions/
 
-# Dash to panel
-cd ~ && git clone https://github.com/home-sweet-gnome/dash-to-panel.git
-cd dash-to-panel
-make install
+wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
+chmod +x gnome-shell-extension-installer
+sudo mv gnome-shell-extension-installer /usr/bin/
 
-# Todo.txt Extension
-cd ~ && git clone https://gitlab.com/bartl/todo-txt-gnome-shell-extension.git
-cp -avr todo-txt-gnome-shell-extension/ ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
-cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
-pip install -r requirements.txt
-make install
+gnome-shell-extension-installer 1160 # Dock to Panel
+gnome-shell-extension-installer 615 # App Indicator
+gnome-shell-extension-installer 36 # Lock Keys
+gnome-shell-extension-installer 1526 # Notification Center
+gnome-shell-extension-installer 570 # Todo.txt
 
-# Notification Center
-cd ~ && git clone https://github.com/Selenium-H/Notification-Center.git
-cd Notification-Center
-bash INSTALL.sh
+# # Dash to panel
+# cd ~ && git clone https://github.com/home-sweet-gnome/dash-to-panel.git
+# cd dash-to-panel
+# make install
 
-# Lock Keys
-cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.git
-cp -r gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
+# # Todo.txt Extension
+# cd ~ && git clone https://gitlab.com/bartl/todo-txt-gnome-shell-extension.git
+# cp -avr todo-txt-gnome-shell-extension/ ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
+# cd ~/.local/share/gnome-shell/extensions/todo.txt@bart.libert.gmail.com/
+# pip install -r requirements.txt
+# make install
 
-# App Indicator
-cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
-cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+# # Notification Center
+# cd ~ && git clone https://github.com/Selenium-H/Notification-Center.git
+# cd Notification-Center
+# bash INSTALL.sh
 
-# Clean up added repos
-rm -rf ~/dash-to-panel/
-rm -rf ~/todo-txt-gnome-shell-extension/
-rm -rf ~/Notification-Center/
-rm -rf ~/gnome-shell-extension-lockkeys/
-rm -rf ~/gnome-shell-extension-appindicator/
+# # Lock Keys
+# cd ~ && git clone https://github.com/kazysmaster/gnome-shell-extension-lockkeys.git
+# cp -r gnome-shell-extension-lockkeys/lockkeys@vaina.lt/ ~/.local/share/gnome-shell/extensions/lockkeys@vaina.lt
+
+# # App Indicator
+# cd ~ && git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git
+# cp -r gnome-shell-extension-appindicator/ ~/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+
+# # Clean up added repos
+# rm -rf ~/dash-to-panel/
+# rm -rf ~/todo-txt-gnome-shell-extension/
+# rm -rf ~/Notification-Center/
+# rm -rf ~/gnome-shell-extension-lockkeys/
+# rm -rf ~/gnome-shell-extension-appindicator/
 
 echo -e 'Update complete. Please restart the machine to refresh GDM and enable snappak installs.'
