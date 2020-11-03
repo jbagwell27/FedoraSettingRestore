@@ -33,6 +33,11 @@ flatpak install flathub com.discordapp.Discord org.telegram.desktop nl.hjdskes.g
 # Install Applications
 sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync bpytop screenfetch gstreamer1-plugin-openh264 gstreamer1-libav gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly -y
 
+# Install Ookla Speedtest
+wget https://bintray.com/ookla/rhel/rpm -O bintray-ookla-rhel.repo
+sudo mv bintray-ookla-rhel.repo /etc/yum.repos.d/
+sudo dnf install speedtest
+
 # Update fstab
 sudo mkdir /media/share
 sudo mkdir /media/plex
