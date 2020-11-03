@@ -38,13 +38,13 @@ wget https://bintray.com/ookla/rhel/rpm -O bintray-ookla-rhel.repo
 sudo mv bintray-ookla-rhel.repo /etc/yum.repos.d/
 sudo dnf install speedtest
 
-# Update fstab
+# Update fstab file
 sudo mkdir /media/share
 sudo mkdir /media/plex
 echo -e '192.168.1.4:/mnt/mainpool/share\t/media/share\tnfs\trw\t0\t0' | sudo tee -a /etc/fstab
 echo -e '192.168.1.4:/mnt/mainpool/plex\t/media/plex\tnfs\trw\t0\t0' | sudo tee -a /etc/fstab
 
-# Update Hosts
+# Update Hosts file
 echo -e '192.168.1.4\tfreenas.local' | sudo tee -a /etc/hosts
 echo -e '192.168.1.6\tplex.local' | sudo tee -a /etc/hosts
 echo -e '192.168.1.8\ttransmission.local' | sudo tee -a /etc/hosts
@@ -54,6 +54,7 @@ echo -e '192.168.1.25\tpiarouter.local' | sudo tee -a /etc/hosts
 
 # Add user to vboxusers group for virtualbox configuration
 sudo usermod -a -G vboxusers "$USER"
+
 # Switch to xorg from Wayland
 sudo cp /etc/gdm/custom.conf /etc/gdm/custom.conf.bak
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/' /etc/gdm/custom.conf
@@ -62,15 +63,16 @@ sudo sed -i '/WaylandEnable=false/a DefaultSession=gnome-xorg.desktop' /etc/gdm/
 # Install Gnome extensions
 mkdir ~/.local/share/gnome-shell/extensions/
 
+# Install Gnome Extension Installer CLI
 wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 sudo mv gnome-shell-extension-installer /usr/bin/
 
 gnome-shell-extension-installer 1160 # Dock to Panel
-gnome-shell-extension-installer 615 # App Indicator
-gnome-shell-extension-installer 36 # Lock Keys
+gnome-shell-extension-installer 615  # App Indicator
+gnome-shell-extension-installer 36   # Lock Keys
 gnome-shell-extension-installer 1526 # Notification Center
-gnome-shell-extension-installer 570 # Todo.txt
+gnome-shell-extension-installer 570  # Todo.txt
 
 # # Dash to panel
 # cd ~ && git clone https://github.com/home-sweet-gnome/dash-to-panel.git
@@ -104,4 +106,4 @@ gnome-shell-extension-installer 570 # Todo.txt
 # rm -rf ~/gnome-shell-extension-lockkeys/
 # rm -rf ~/gnome-shell-extension-appindicator/
 
-echo -e 'Update complete. Please restart the machine to refresh GDM and enable snappak installs.'
+echo -e '\n\nUpdate complete. \nPlease restart the machine to refresh GDM and enable snappak installs.'
