@@ -31,7 +31,7 @@ sudo dnf install make redhat-rpm-config gnome-tweaks pkg-config git zip gnome-co
 flatpak install flathub com.discordapp.Discord org.telegram.desktop nl.hjdskes.gcolor3 -y
 
 # Install Applications
-sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync bpytop screenfetch gstreamer1-plugin-openh264 gstreamer1-libav gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly -y
+sudo dnf install code vim geary VirtualBox filezilla gparted gimp wine snapd epiphany insync bpytop screenfetch iperf iperf3 gstreamer1-plugin-openh264 gstreamer1-libav gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly -y
 
 # Install Ookla Speedtest
 wget https://bintray.com/ookla/rhel/rpm -O bintray-ookla-rhel.repo
